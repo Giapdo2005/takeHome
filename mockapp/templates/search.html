@@ -1,0 +1,28 @@
+{% extends "_base.html" %}
+{% block title %}Member Search{% endblock %}
+{% block body %}
+{% include "_nav.html" %}
+<h2>Member Search</h2>
+<form method="get" action="/search">
+  <label for="member_id">Member ID</label>
+  <input type="text" id="member_id" name="member_id" value="{{ member_id or '' }}">
+  <button type="submit">Search</button>
+</form>
+
+{% if searched %}
+  {% if member %}
+    <h3>Search Results</h3>
+    <table border="1" cellpadding="4">
+      <tr><th>Member ID</th><th>Name</th><th>Status</th><th></th></tr>
+      <tr>
+        <td>{{ member_id }}</td>
+        <td>{{ member.name }}</td>
+        <td>{{ member.status }}</td>
+        <td><a href="/members/{{ member_id }}">View</a></td>
+      </tr>
+    </table>
+  {% else %}
+    <p>No matching records.</p>
+  {% endif %}
+{% endif %}
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "_base.html" %}
+{% block title %}Add Sub-Account{% endblock %}
+{% block body %}
+{% include "_nav.html" %}
+<h2>Add Sub-Account &mdash; {{ member.name }} ({{ member_id }})</h2>
+{% if error %}<p style="color:red">{{ error }}</p>{% endif %}
+<form method="post" action="/members/{{ member_id }}/subaccount/new">
+  <table>
+    <tr>
+      <td><label for="account_type">Account Type</label></td>
+      <td>
+        <select id="account_type" name="account_type">
+          <option value="">-- select --</option>
+          <option value="Savings">Savings</option>
+          <option value="Checking">Checking</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="initial_deposit">Initial Deposit</label></td>
+      <td><input type="text" id="initial_deposit" name="initial_deposit"></td>
+    </tr>
+  </table>
+  <button type="submit">Review</button>
+</form>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "_base.html" %}
+{% block title %}Review New Sub-Account{% endblock %}
+{% block body %}
+{% include "_nav.html" %}
+<h2>Review New Sub-Account</h2>
+<table border="1" cellpadding="4">
+  <tr><td>Sub-Account</td><td>{{ subaccount_number }}</td></tr>
+  <tr><td>Member</td><td>{{ member.name }} ({{ member_id }})</td></tr>
+  <tr><td>Type</td><td>{{ account_type }}</td></tr>
+  <tr><td>Initial Deposit</td><td>${{ initial_deposit }}</td></tr>
+</table>
+<form method="post" action="/members/{{ member_id }}/subaccount/confirm">
+  <button type="submit">Confirm &amp; Create</button>
+</form>
+<p><a href="/members/{{ member_id }}/subaccount/new">Back</a></p>
+{% endblock %}

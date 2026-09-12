@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "_comment": "Enforced on BOTH the discovery loop and deterministic replay. The agent must not act outside this.",
+
+  "allowed_url_prefixes": [
+    "http://localhost:8080/",
+    "http://127.0.0.1:8080/"
+  ],
+
+  "allowed_action_types": ["navigate", "click", "type", "select", "read", "wait"],
+
+  "risky_control_patterns": [
+    "confirm & create",
+    "confirm and create",
+    "close account",
+    "delete",
+    "transfer",
+    "wire",
+    "pay",
+    "submit payment"
+  ],
+  "_risky_note": "Matched case-insensitively against a control's visible text/accessible name. 'submit' alone is intentionally NOT here — too many benign buttons say Submit; we match specific irreversible verbs.",
+
+  "risky_action_policy": "block",
+  "_policy_values": "block | confirm | flag — how replay treats a risky control when it appears in the step list or on the page"
+}

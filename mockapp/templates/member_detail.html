@@ -1,0 +1,15 @@
+{% extends "_base.html" %}
+{% block title %}{{ member.name }}{% endblock %}
+{% block body %}
+{% include "_nav.html" %}
+<h2>{{ member.name }}</h2>
+<table border="1" cellpadding="4">
+  <tr><td>Member ID</td><td>{{ member_id }}</td></tr>
+  <tr><td>Status</td><td>{{ member.status }}</td></tr>
+</table>
+<p>
+  <a href="/members/{{ member_id }}/subaccount/new">Add Sub-Account</a>
+  &nbsp;|&nbsp;
+  <a href="/members/{{ member_id }}/close">Close Account</a>
+</p>
+{% endblock %}

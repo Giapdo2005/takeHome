@@ -1,0 +1,16 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+
+# Secrets — never commit
+.env
+
+# Per-run scratch output (raw, can be large). Curated evidence/ IS committed.
+runs/
+
+# OS
+.DS_Store
