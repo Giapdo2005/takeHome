@@ -1,5 +1,49 @@
-"""The typed capability artifact — schema, recorder, storage.
+from cua.artifact.schema import (
+    Capability,
+    Checkpoint,
+    ClickStep,
+    CssStrategy,
+    ErrorRule,
+    LabelStrategy,
+    Locator,
+    LocatorStrategy,
+    NavigateStep,
+    OrdinalStrategy,
+    OutputSpec,
+    ParamSpec,
+    Policy,
+    Provenance,
+    ReadStep,
+    RoleNameStrategy,
+    SelectStep,
+    Step,
+    Target,
+    TextStrategy,
+    TypeStep,
+    ValueRef,
+)
 
-schema.py is written on Day 6 (it's the focal point of the evaluation, so it
-gets its own session). This package is intentionally near-empty until then.
-"""
+__all__ = [
+    "Capability",
+    "Checkpoint",
+    "ClickStep",
+    "CssStrategy",
+    "ErrorRule",
+    "LabelStrategy",
+    "Locator",
+    "LocatorStrategy",
+    "NavigateStep",
+    "OrdinalStrategy",
+    "OutputSpec",
+    "ParamSpec",
+    "Policy",
+    "Provenance",
+    "ReadStep",
+    "RoleNameStrategy",
+    "SelectStep",
+    "Step",
+    "Target",
+    "TextStrategy",
+    "TypeStep",
+    "ValueRef",
+]
